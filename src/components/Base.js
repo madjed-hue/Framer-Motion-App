@@ -15,6 +15,12 @@ const containerVariants = {
       delay: 0.7,
     },
   },
+  exit: {
+    x: "-100vw",
+    transition: {
+      ease: "easeInOut",
+    },
+  },
 };
 
 const nextVariants = {
@@ -36,7 +42,9 @@ const buttonVariants = {
     textShadow: "0px 0px 8px rgb(255,255,255)",
     boxShadow: "0px 0px 8px rgb(255,255,255)",
     transition: {
-      yoyo: Infinity,
+      repeat: Infinity,
+      repeatType: "reverse",
+      duration: 0.5,
     },
   },
   tap: {
@@ -53,6 +61,7 @@ const Base = ({ addBase, pizza }) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
     >
       <h3>Step 1: Choose Your Base</h3>
       <ul>
